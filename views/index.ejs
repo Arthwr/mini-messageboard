@@ -8,16 +8,19 @@
   </head>
   <body>
     <section class="board">
-      <h1><%= title %></h1>
-      <ul>
-        <% messages.forEach(message => { %>
-        <li>
-          <span class="user"><b><%= message.user %></b></span>
-          <span class="timestamp">at <%= message.added %>:</span>
-          <p class="message"><%= message.text %></p>
-        </li>
-        <% }) %>
-      </ul>
+      <div>
+        <h1><%= title %></h1>
+        <ul>
+          <% messages.forEach(message => { %>
+          <li>
+            <span class="user"><b><%= message.user %></b></span>
+            <span class="timestamp">at <%= message.added %></span>
+            <p class="message"><%= message.text %></p>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+      <div><%- include("form") %></div>
     </section>
   </body>
 </html>
