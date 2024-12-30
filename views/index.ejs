@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title>Message Board</title>
   </head>
   <body>
-    <h1><%= title %></h1>
+    <section class="board">
+      <h1><%= title %></h1>
+      <ul>
+        <% messages.forEach(message => { %>
+        <li>
+          <span class="user"><b><%= message.user %></b></span>
+          <span class="timestamp">at <%= message.added %>:</span>
+          <p class="message"><%= message.text %></p>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
   </body>
 </html>
