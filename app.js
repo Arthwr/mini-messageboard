@@ -10,11 +10,10 @@ const port = process.env.PORT || 3000;
 
 // App middleware set up
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
-const assetsPath = path.join(__dirname, "public");
-app.use(express.static(assetsPath));
 
 // Routes
 app.use("/", indexRouter);
@@ -25,8 +24,8 @@ app.use((req, res, next) => res.status(404).send("Page not found"));
 
 // Error handling Middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something went wrong");
+  console.error(`[${new Date().toISOString()}] ${err.stack}`);
+  res.status(500).send("Internal Server Error");
 });
 
 // Server start
