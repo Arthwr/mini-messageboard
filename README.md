@@ -2,11 +2,6 @@
 
 A simple message board built with Node.js and Express for learning purposes. Users can post messages and view all previous messages.
 
-## Features
-- Add a new message with a name and text.
-- View a list of all posted messages.
-
-## Tech Stack
 - **Backend**: Node.js, Express.js
 - **Templating**: EJS
 
