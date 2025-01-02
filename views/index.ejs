@@ -13,14 +13,15 @@
         <ul>
           <% messages.forEach(message => { %>
           <li>
-            <span class="user"><b><%= message.user %></b></span>
-            <span class="timestamp">at <%= message.added %></span>
+            <span class="user"><b><%= message.username %></b></span>
+            <span class="timestamp">at <%= message.sent_at %></span>
             <p class="message"><%= message.text %></p>
           </li>
           <% }) %>
         </ul>
       </div>
-      <div><%- include("form") %></div>
+      <%- include("partials/errors.ejs") %>
+      <div><%- include("./partials/form") %></div>
     </section>
   </body>
 </html>
