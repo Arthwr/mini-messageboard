@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: ".env.production" });
 const { Client } = require("pg");
 
 const SQL_CREATE_TABLE = `
